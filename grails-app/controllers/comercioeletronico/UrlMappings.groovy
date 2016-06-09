@@ -3,7 +3,6 @@ package comercioeletronico
 class UrlMappings {
 
     static mappings = {
-        "/carrinhoCompras"(resource: 'carrinhoCompras')
         "/$controller/$action?/$id?(.$format)?" {
             constraints {
                 // apply constraints here

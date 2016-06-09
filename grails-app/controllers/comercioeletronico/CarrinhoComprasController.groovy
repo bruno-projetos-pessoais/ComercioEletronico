@@ -25,4 +25,16 @@ class CarrinhoComprasController {
         carrinhoCompras.adicionarProduto(listaProduto)
         render([mensagem: "Produto adicionado com sucesso"] as JSON)
     }
+
+    def removerProduto(Produto produto) {
+        try {
+            carrinhoCompras.removerProduto(produto)
+        }
+        catch (Exception e){
+            render ([erro: e.message] as JSON)
+            return
+        }
+        render ([sucesso: "Produto removido com sucesso"] as JSON)
+
+    }
 }

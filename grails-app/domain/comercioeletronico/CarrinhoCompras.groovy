@@ -21,6 +21,15 @@ class CarrinhoCompras {
         this.itens.add(listaProduto)
     }
 
+    void removerProduto (Produto produto) {
+        Boolean removido = itens.removeIf{ listaProduto ->
+            listaProduto.produto.id == produto?.id
+        }
+        if (!removido){
+            throw new Exception("Produto não existente no carrinho")
+        }
+    }
+
     Integer getNumeroItens() {
         return itens.size()
     }

@@ -14,5 +14,6 @@ class Pedido {
     }
 
     static constraints = {
+        itens minSize: 1
     }
 }

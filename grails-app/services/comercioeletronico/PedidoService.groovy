@@ -8,6 +8,7 @@ class PedidoService {
 
     Pedido registrarPedido(CarrinhoCompras carrinhoCompras) {
         Pedido novoPedido = new Pedido(carrinhoCompras.properties)
+        novoPedido.dataPedido = new Date()
         if (!novoPedido.save()) {
             throw new ValidationException("", novoPedido.errors)
         }

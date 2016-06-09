@@ -1,0 +1,4 @@
+model {
+  CarrinhoCompras carrinhoCompras
+}
+json g.render(template:"carrinhoCompras", model:[carrinhoCompras:carrinhoCompras])

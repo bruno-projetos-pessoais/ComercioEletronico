@@ -2,13 +2,24 @@ package comercioeletronico
 
 class CarrinhoCompras {
 
-    ArrayList<ListaProduto> itens = new ArrayList<ListaProduto>()
+    def messageSource
+
+    List<ListaProduto> itens = new ArrayList<ListaProduto>()
 
     static hasMany = [itens: ListaProduto]
 
     static mapWith = "none"
 
     static transients = ['numeroItens', 'precoTotal']
+
+    void adicionarProduto(ListaProduto listaProduto) {
+        ListaProduto itemExistente = itens.find { item -> item.produto.id == listaProduto.produto.id }
+        if (itemExistente) {
+            itemExistente.quantidade += listaProduto.quantidade
+            return
+        }
+        this.itens.add(listaProduto)
+    }
 
     Integer getNumeroItens() {
         return itens.size()

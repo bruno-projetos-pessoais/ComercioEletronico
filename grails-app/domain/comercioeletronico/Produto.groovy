@@ -2,7 +2,7 @@ package comercioeletronico
 
 import grails.rest.Resource
 
-@Resource(uri = '/produto', formats = ['json', 'xml'])
+@Resource(uri = '/produto', formats = ['html','json', 'xml'])
 class Produto {
 
     String sku
